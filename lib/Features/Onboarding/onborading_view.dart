@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:online_ezzy/Features/Home/home_view.dart';
+import 'package:online_ezzy/Features/Auth/login_view.dart';
 import 'package:online_ezzy/core/utils/styles/app_styles.dart';
 import 'package:online_ezzy/core/utils/styles/colors.dart';
 
@@ -61,7 +61,7 @@ class _OnboradingViewState extends State<OnboradingView> {
   void _handleNext() {
     if (_currentPage == _pages.length - 1) {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomeView()),
+        MaterialPageRoute(builder: (_) => const LoginView()),
       );
       return;
     }

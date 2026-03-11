@@ -8,12 +8,14 @@ class AddShipmentPlanData {
     required this.highlight,
     required this.bulletPoints,
     required this.assetPath,
+    this.onSelect,
   });
 
   final String title;
   final String highlight;
   final List<String> bulletPoints;
   final String assetPath;
+  final VoidCallback? onSelect;
 }
 
 class AddShipmentPlanCard extends StatelessWidget {
@@ -98,9 +100,7 @@ class AddShipmentPlanCard extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                // TODO: proceed with this plan
-              },
+              onPressed: data.onSelect ?? () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.mainColor,
                 foregroundColor: AppColors.white,

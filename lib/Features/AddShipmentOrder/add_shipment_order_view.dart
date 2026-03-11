@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_ezzy/core/utils/styles/app_styles.dart';
 import 'package:online_ezzy/core/utils/styles/colors.dart';
+import 'package:online_ezzy/Features/CustomShipment/custom_shipment_view.dart';
 
 import 'widgets/add_shipment_app_bar.dart';
 import 'widgets/add_shipment_plan_card.dart';
@@ -40,6 +41,13 @@ class AddShipmentOrderView extends StatelessWidget {
           'خصومات للشحنات المتكررة',
         ],
         assetPath: 'assets/images/Container.png',
+        onSelect: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => const CustomShipmentView(),
+            ),
+          );
+        },
       ),
     ];
 

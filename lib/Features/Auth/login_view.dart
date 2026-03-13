@@ -140,8 +140,10 @@ class _LoginViewState extends State<LoginView> {
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
-                          labelText: 'البريد الإلكتروني / رقم الهاتف *',
                           hintText: 'أدخل البريد الإلكتروني أو رقم الهاتف',
+                          hintStyle: AppStyles.styleMedium16(context).copyWith(
+                            color: AppColors.greyDark,
+                          ),
                           filled: true,
                           fillColor: AppColors.greyLight,
                           border: OutlineInputBorder(
@@ -159,12 +161,16 @@ class _LoginViewState extends State<LoginView> {
                       const SizedBox(height: 16),
                       TextFormField(
                         controller: _passwordController,
+                        
                         obscureText: true,
                         textInputAction: TextInputAction.done,
                         onFieldSubmitted: (_) => _login(),
                         decoration: InputDecoration(
-                          labelText: 'كلمة المرور *',
-                          hintText: '••••••••',
+                          hintText: 'أدخل كلمة المرور',
+
+                          hintStyle: AppStyles.styleMedium16(context).copyWith(
+                            color: AppColors.greyDark,
+                          ),
                           filled: true,
                           fillColor: AppColors.greyLight,
                           border: OutlineInputBorder(

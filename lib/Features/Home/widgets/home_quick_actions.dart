@@ -45,10 +45,12 @@ class _QuickActionData {
   const _QuickActionData({
     required this.title,
     required this.assetPath,
+    this.isAddresses = false,
   });
 
   final String title;
   final String assetPath;
+  final bool isAddresses;
 }
 
 class _QuickActionCard extends StatelessWidget {
@@ -58,55 +60,63 @@ class _QuickActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 88,
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: AppColors.greyMedium.withOpacity(0.25),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
+    return InkWell(
+      onTap: () {
+        if (data.isAddresses) {
+          Navigator.of(context).pushNamed('/addresses');
+        }
+      },
+      child: Container(
+        width: 88,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: AppColors.greyMedium.withOpacity(0.25),
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(18),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Image.asset(
-                data.assetPath,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    color: AppColors.greyLight,
-                    child: const Icon(
-                      Icons.image_not_supported_outlined,
-                      size: 24,
-                    ),
-                  );
-                },
-              ),
-            ),
-            Container(
-              color: AppColors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-              alignment: Alignment.center,
-              child: Text(
-                data.title,
-                textAlign: TextAlign.center,
-                style: AppStyles.styleRegular10(context),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.04),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
             ),
           ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Image.asset(
+                  data.assetPath,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      color: AppColors.greyLight,
+                      child: const Icon(
+                        Icons.image_not_supported_outlined,
+                        size: 24,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Container(
+                color: AppColors.white,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                alignment: Alignment.center,
+                child: Text(
+                  data.title,
+                  textAlign: TextAlign.center,
+                  style: AppStyles.styleRegular10(context),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

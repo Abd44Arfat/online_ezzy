@@ -10,18 +10,19 @@ class OnboardingAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const SizedBox(width: 48),
         GestureDetector(
           onTap: onSkip,
           behavior: HitTestBehavior.opaque,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'تخطي',
-              style: AppStyles.styleMedium14(context).copyWith(
-                color: AppColors.greyDark,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                'تخطي',
+                style: AppStyles.styleMedium14(context).copyWith(
+                  color: AppColors.greyDark,
+                ),
               ),
             ),
           ),

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:online_ezzy/Features/Onboarding/Onborading_view.dart';
 import 'package:online_ezzy/Features/Cart/cubit/cart_cubit.dart';
+import 'package:online_ezzy/Features/Addresses/addresses_view.dart';
 import 'package:online_ezzy/core/utils/networking/dio_helper.dart';
 import 'package:online_ezzy/core/utils/payments/stripe_config.dart';
 import 'package:online_ezzy/repo/cart_repo.dart';
@@ -43,7 +44,11 @@ class MyApp extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            home: child ?? const OnboradingView(),
+            initialRoute: '/',
+            routes: {
+              '/': (_) => child ?? const OnboradingView(),
+              '/addresses': (_) => const AddressesView(),
+            },
           ),
         );
       },

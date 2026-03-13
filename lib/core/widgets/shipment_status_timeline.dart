@@ -8,14 +8,12 @@ class ShipmentStatusTimeline extends StatelessWidget {
     required this.currentStep,
   });
 
-  /// 0-based step index coming from API (e.g. 0 = لم الطلب, 4 = تم التسليم)
+  /// 0-based step index coming from API (0 = في الصندوق, 2 = تم التسليم)
   final int currentStep;
 
   static const List<String> labels = [
-    'لم الطلب',
-    'لم الشحن',
-    'المستودع',
-    'قيد النقل',
+    'في الصندوق',
+    'في الطريق',
     'تم التسليم',
   ];
 

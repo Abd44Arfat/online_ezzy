@@ -10,7 +10,7 @@ class HomeQuickActions extends StatelessWidget {
     final actions = [
       _QuickActionData(
         title: 'اطلب توصيل',
-        assetPath: 'assets/images/تتبع شحنتك.png',
+        assetPath: 'assets/images/banner1.png',
       ),
       _QuickActionData(
         title: 'العناوين',
@@ -18,11 +18,11 @@ class HomeQuickActions extends StatelessWidget {
       ),
       _QuickActionData(
         title: 'تتبع شحنتك',
-        assetPath: 'assets/images/تتبع شحنتك.png',
+        assetPath: 'assets/images/banner2.png',
       ),
       _QuickActionData(
         title: 'خدمات مالية',
-        assetPath: 'assets/images/تتبع شحنتك.png',
+        assetPath: 'assets/images/banner3.png',
       ),
     ];
 

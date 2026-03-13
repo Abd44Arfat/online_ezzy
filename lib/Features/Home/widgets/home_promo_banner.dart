@@ -14,9 +14,9 @@ class _HomePromoBannerState extends State<HomePromoBanner> {
   int _currentPage = 0;
 
   final List<String> _banners = const [
-    'assets/images/1.png',
-    'assets/images/1.png',
-    'assets/images/1.png',
+    'assets/images/bannerssss.jpg',
+    'assets/images/bannerssss.jpg',
+    'assets/images/bannerssss.jpg',
   ];
 
   @override
@@ -71,8 +71,8 @@ class _HomePromoBannerState extends State<HomePromoBanner> {
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          'نص تسويقي placeholder\nستضع البانر من Figma هنا',
-                          style: AppStyles.styleSemiBold14(context).copyWith(
+                          'نصلك اسرع اينما كنت',
+                          style: AppStyles.styleBold18(context).copyWith(
                             color: AppColors.white,
                           ),
                           textAlign: TextAlign.right,

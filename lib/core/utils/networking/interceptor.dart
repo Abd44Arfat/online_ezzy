@@ -13,6 +13,14 @@ class LoggerInterceptor extends Interceptor {
     if (options.queryParameters.isNotEmpty) {
       logger.i('QUERY: ${options.queryParameters}');
     }
+    if (options.data != null) {
+      logger.d('BODY: ${options.data}');
+    }
+    if (err.response != null) {
+      logger.e('STATUSCODE: ${err.response?.statusCode}');
+      logger.e('ERROR_DATA: ${err.response?.data}');
+      logger.e('ERROR_HEADERS: ${err.response?.headers}');
+    }
     logger.d('Error type: ${err.error} \n '
         'Error message: ${err.message}'); //Debug log
     handler.next(err); //Continue with the Error

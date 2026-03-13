@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:online_ezzy/core/utils/styles/colors.dart';
 import 'package:online_ezzy/Features/Cart/cart_view.dart';
 import 'package:online_ezzy/Features/Shipment/shipment_view.dart';
+import 'package:online_ezzy/Features/Profile/profile_view.dart';
 
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_bottom_nav_bar.dart';
 import 'widgets/home_quick_actions.dart';
 import 'widgets/home_promo_banner.dart';
 import 'widgets/home_active_shipments_section.dart';
+import 'widgets/home_products_preview_section.dart';
 import 'widgets/home_track_shipment_section.dart';
 import 'widgets/home_warehouse_section.dart';
 import 'widgets/home_plans_section.dart';
@@ -39,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
             _buildHomeTab(context),
             CartView(onBack: () => setState(() => _currentIndex = 0)),
             const ShipmentView(),
-            const Center(child: Text('Profile (placeholder)')),
+            const ProfileView(),
           ],
         ),
       ),
@@ -62,6 +64,8 @@ class _HomeViewState extends State<HomeView> {
                 HomePromoBanner(),
                 SizedBox(height: 16),
                 HomeActiveShipmentsSection(),
+                SizedBox(height: 16),
+                HomeProductsPreviewSection(),
                 SizedBox(height: 16),
                 HomeTrackShipmentSection(),
                 SizedBox(height: 16),
